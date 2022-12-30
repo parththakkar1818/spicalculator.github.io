@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SPI Calculator</title>
+</head>
+
+<style>
+    body{
+        background-color: aqua;
+    }
+    #s1, #s2, #s3, #s4, #s5, #s6, #s7{
+        font-size: 200%;
+        text-align: center;
+        padding: 5px;
+        width: 80%;
+
+    }
+    h3{
+        font-size: 200%;
+        text-align: center;
+    }
+    h2{
+        font-size: 500%;
+        font-style: inherit;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+    }
+    #but{
+        text-align: center;
+        width: 15%;
+        height: 50px;
+        font-size: 200%;
+    }
+    #dev{
+        text-align: right;
+        font-style: italic;
+    
+    }
+</style>
+
+<body>
+    <h1 style="text-align: center;"> SELECT YOUR GRADE</h1>
+    <br>
+    <h1 id="dev">Developed by : Parth Thakkar</h1>
+    <h3> VCPD </h3>
+    <select  id="s1">
+        <option> A+ </option>
+        <option> A </option>
+        <option> B+ </option>
+        <option> B </option>
+        <option> C+ </option>
+        <option> C </option>
+        
+    </select>
+
+    <h3> Digital Logic Design </h3>
+    <select  id="s2">
+        <option> A+ </option>
+        <option> A </option>
+        <option> B+ </option>
+        <option> B </option>
+        <option> C+ </option>
+        <option> C </option>
+        
+    </select>
+
+    <h3> Elctronics Device and Circuit </h3>
+    <select  id="s3">
+        <option> A+ </option>
+        <option> A </option>
+        <option> B+ </option>
+        <option> B </option>
+        <option> C+ </option>
+        <option> C </option>
+        
+    </select>
+
+    <h3> Network Theory </h3>
+    <select  id="s4">
+        <option> A+ </option>
+        <option> A </option>
+        <option> B+ </option>
+        <option> B </option>
+        <option> C+ </option>
+        <option> C </option>
+        
+    </select>
+
+    <h3> Principle of Economics </h3>
+    <select  id="s6">
+        <option> A+ </option>
+        <option> A </option>
+        <option> B+ </option>
+        <option> B </option>
+        <option> C+ </option>
+        <option> C </option>
+        
+    </select>
+
+    <h3> Signal and System </h3>
+    <select  id="s5">
+        <option> A+ </option>
+        <option> A </option>
+        <option> B+ </option>
+        <option> B </option>
+        <option> C+ </option>
+        <option> C </option>
+        
+    </select>
+
+    <h3> Digital Logic Design Lab </h3>
+    <select  id="s7">
+        <option> A+ </option>
+        <option> A </option>
+        <option> B+ </option>
+        <option> B </option>
+        <option> C+ </option>
+        <option> C </option>
+        
+    </select>
+
+    <br>
+    <br>
+    <button onclick="calc()" id="but"> Calculate</button>
+    
+    
+</body>
+
+
+<!--javascript-->
+<script>
+    function calc() {
+        var t=0;
+
+        //vcpd
+        var grd=document.getElementById('s1').value;
+        if(grd=='A+') t+=10*4;
+        if(grd=='A') t+=9*4;
+        if(grd=='B+') t+=8*4;
+        if(grd=='B') t+=7*4;
+        if(grd=='C+') t+=6*4;
+        if(grd=='C') t+=5*4;
+        
+
+        //dld
+        var grd=document.getElementById('s2').value;
+        if(grd=='A+') t+=10*4;
+        if(grd=='A') t+=9*4;
+        if(grd=='B+') t+=8*4;
+        if(grd=='B') t+=7;
+        if(grd=='C+') t+=6*4;
+        if(grd=='C') t+=5*4;
+        
+
+        //edc
+        var grd=document.getElementById('s3').value;
+        if(grd=='A+') t+=10*4;
+        if(grd=='A') t+=9*4;
+        if(grd=='B+') t+=8*4;
+        if(grd=='B') t+=7*4;
+        if(grd=='C+') t+=6*4;
+        if(grd=='C') t+=5*4;
+        
+
+        //nt
+        var grd=document.getElementById('s4').value;
+        if(grd=='A+') t+=10*3;
+        if(grd=='A') t+=9*3;
+        if(grd=='B+') t+=8*3;
+        if(grd=='B') t+=7*3;
+        if(grd=='C+') t+=6*3;
+        if(grd=='C') t+=5*3;
+        
+
+        //ss
+        var grd=document.getElementById('s5').value;
+        if(grd=='A+') t+=10*3;
+        if(grd=='A') t+=9*3;
+        if(grd=='B+') t+=8*3;
+        if(grd=='B') t+=7*3;
+        if(grd=='C+') t+=6*3;
+        if(grd=='C') t+=5*3;
+        
+
+        //poe
+        var grd=document.getElementById('s6').value;
+        if(grd=='A+') t+=10*2;
+        if(grd=='A') t+=9*2;
+        if(grd=='B+') t+=8*2;
+        if(grd=='B') t+=7*2;
+        if(grd=='C+') t+=6*2;
+        if(grd=='C') t+=5*2;
+        
+
+        //ddlab
+        var grd=document.getElementById('s7').value;
+        if(grd=='A+') t+=10;
+        if(grd=='A') t+=9;
+        if(grd=='B+') t+=8;
+        if(grd=='B') t+=7;
+        if(grd=='C+') t+=6;
+        if(grd=='C') t+=5;
+        
+        document.getElementById('a2').innerHTML="SPI: "+(t/21).toFixed(4);
+
+        
+    }
+</script>
+<body>
+    <h2 id="a2"></h2>
+    <br>
+    <!--<marquee style="font-size: 300%; font-family: Imprint MT Shadow;" width=100% direction='right' behavior='alternate' onmouseover='this.stop();'
+		onmouseout='this.start();'> ..The ASPRV Product..</marquee>-->
+	
+</body>
